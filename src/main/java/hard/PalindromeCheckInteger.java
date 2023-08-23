@@ -1,6 +1,6 @@
 package hard;
 
-public class PalindromeCheck {
+public class PalindromeCheckInteger {
     public static void main(String[] args) {
         System.out.println(checkPalindrome(8338));
     }

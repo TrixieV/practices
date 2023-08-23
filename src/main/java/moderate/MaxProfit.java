@@ -9,10 +9,22 @@ If you cannot achieve any profit, return 0.
  */
 public class MaxProfit {
     public static void main(String[] args) {
-
+        int[] prices = new int[]{7,1,5,3,6,4};
+        System.out.println(maxProfit(prices));
     }
 
     private static int maxProfit(int[] prices) {
+        int buy = Integer.MAX_VALUE;
+        int max = 0;
 
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] < buy) {
+                buy = prices[i];
+            }
+            int profit = prices[i] - buy;
+            max = Math.max(max, profit);
+        }
+
+        return max;
     }
 }
