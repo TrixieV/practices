@@ -12,7 +12,7 @@ int top() gets the top element of the stack.
 int getMin() retrieves the minimum element in the stack.
 You must implement a solution with O(1) time complexity for each function.
  */
-import java.util.Objects;
+
 import java.util.Stack;
 
 public class MinStack {
@@ -31,7 +31,8 @@ public class MinStack {
     }
 
     public void pop() {
-        if (Objects.equals(minStack.peek(), stack.peek())) {
+//        if (Objects.equals(minStack.peek(), stack.peek())) {
+        if (minStack.peek().equals(stack.peek())) {
             minStack.pop();
         }
         stack.pop();
