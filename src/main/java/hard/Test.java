@@ -18,37 +18,7 @@ public class Test {
 
 
 
-//    public Node cloneGraph(Node node) {
-//        if(node == null) {
-//            return null;
-//        }
-//        final var visited = new HashMap<Integer, Node>();
-//        final var copy = new Node(node.val);
-//        cloneGraph(node, copy, visited);
-//        return copy;
-//    }
 
-//    /**
-//     * Deep clones the graph
-//     * @param og Original Node
-//     * @param copy Copy Node
-//     * @param visited Whether the copy has been already visited / created
-//     */
-//    private void cloneGraph(Node og, Node copy, Map<Integer, Node> visited) {
-//        // Check whether the copy is already created / visited
-//        if (!visited.containsKey(copy.val)) {
-//            visited.put(copy.val, copy);
-//            for (Node ogChild : og.neighbors) {
-//
-//                // Very important step, create new child if node with that value is not already created
-//                final var copyChild = visited.getOrDefault(ogChild.val, new Node(ogChild.val));
-//                copy.neighbors.add(copyChild);
-//
-//                // DFS repeat with all neighbours
-//                cloneGraph(ogChild, copyChild, visited);
-//            }
-//        }
-//    }
 
 //    public int evalRPN(String[] tokens) {
 //        Stack<Integer> stack = new Stack<>();
