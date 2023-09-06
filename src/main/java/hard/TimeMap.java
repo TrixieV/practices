@@ -23,6 +23,7 @@ import java.util.List;
 
 public class TimeMap {
     public TimeMap() {
+
     }
 
     HashMap<String, List<Node>> keyMap = new HashMap<>();
