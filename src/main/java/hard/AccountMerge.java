@@ -72,49 +72,4 @@ public class AccountMerge {
 
     }
 
-//    static Map<String, Set<String>> graph = new HashMap<>();  //<email node, neighbor nodes>
-//    static Map<String, String> name = new HashMap<>();        //<email, username>
-//
-//    private static List<List<String>> accountsMerge(List<List<String>> accounts) {
-//
-//        // Building the graph
-//        for(List<String> account : accounts){
-//            // ["John","johnsmith@mail.com","john_newyork@mail.com"]
-//            // we will connect first email to every email in a star pattern
-//            String username = account.get(0);
-//            for(int i=1; i<account.size(); i++){
-//                name.put(account.get(i), username); //connect email to username
-//                if(!graph.containsKey(account.get(i))){
-//                    graph.put(account.get(i), new HashSet<>());
-//                }
-//
-//                if(i==1) continue;
-//                graph.get(account.get(i)).add(account.get(i - 1)); // other -> first email
-//                graph.get(account.get(i - 1)).add(account.get(i)); // first -> other email
-//            }
-//        }
-//
-//        Set<String> visited = new HashSet<>();
-//        List<List<String>> res = new LinkedList<>();
-//        // DFS search the graph;
-//        for (String email : name.keySet()) {
-//            List<String> list = new ArrayList<>();
-//            if (visited.add(email)) {
-//                dfs(graph, email, visited, list);
-//                Collections.sort(list); // sort as demanded in question
-//                list.add(0, name.get(email)); // add username at first
-//                res.add(list); // add to result
-//            }
-//        }
-//        return res;
-//    }
-//
-//    private static void dfs(Map<String, Set<String>> graph, String email, Set<String> visited, List<String> list) {
-//        list.add(email);
-//        for (String next : graph.get(email)) {
-//            if (visited.add(next)) {
-//                dfs(graph, next, visited, list);
-//            }
-//        }
-//    }
 }
