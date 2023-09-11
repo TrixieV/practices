@@ -18,6 +18,7 @@ public class SortColor {
         System.out.println(Arrays.toString(nums));
     }
 
+
     private static void sortColors(int[] nums) {
         if (nums.length <= 1) {
             return;
