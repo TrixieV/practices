@@ -16,7 +16,7 @@ public class Permutation {
 
     private static void checkBack(List<List<Integer>> ans, List<Integer> list, int[] nums) {
         if (list.size() == nums.length) {
-            ans. add(new ArrayList<>(list));
+            ans.add(new ArrayList<>(list));
         } else {
             for (int num : nums) {
                 if (list.contains(num)) {
