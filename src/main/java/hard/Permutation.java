@@ -10,11 +10,11 @@ public class Permutation {
 
     private static List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>();
-        checkBack(ans, new ArrayList<>(), nums);
+        backTracking(ans, nums, new ArrayList<>());
         return ans;
     }
 
-    private static void checkBack(List<List<Integer>> ans, List<Integer> list, int[] nums) {
+    private static void backTracking(List<List<Integer>> ans, int[] nums, List<Integer> list) {
         if (list.size() == nums.length) {
             ans.add(new ArrayList<>(list));
         } else {
@@ -23,7 +23,7 @@ public class Permutation {
                     continue;
                 }
                 list.add(num);
-                checkBack(ans, list, nums);
+                backTracking(ans, nums, list);
                 list.remove(list.size() - 1);
             }
         }

@@ -26,20 +26,23 @@ public class CombinationSum {
     private static List<List<Integer>> combinationSum(int[] candidates, int target) {
         Arrays.sort(candidates);
         List<List<Integer>> ans = new ArrayList<>();
-        checkingAndUpdateLists(candidates, ans, new ArrayList<>(), 0, target);
+        backTracking(ans, new ArrayList<>(), candidates, 0, target);
         return ans;
     }
 
-    private static void checkingAndUpdateLists(int[] candidates, List<List<Integer>> ans,
-                                               List<Integer> list, int start, int remaining) {
+    private static void backTracking(List<List<Integer>> ans, List<Integer> list, int[] candidates, int start, int remaining) {
         if (remaining < 0) {
             return;
-        } else if (remaining == 0) {
+        }
+        if (remaining == 0) {
             ans.add(new ArrayList<>(list));
         } else {
             for (int i = start; i < candidates.length; i++) {
+                if (candidates[i] > remaining) {
+                    break;
+                }
                 list.add(candidates[i]);
-                checkingAndUpdateLists(candidates, ans, list, i, remaining - candidates[i]);
+                backTracking(ans, list, candidates, i, remaining - candidates[i]);
                 list.remove(list.size() - 1);
             }
         }
