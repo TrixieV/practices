@@ -11,7 +11,6 @@ DO NOT allocate another 2D matrix and do the rotation.
 public class RotateImage {
     public static void main(String[] args) {
         int[][] matrix = new int[][]{{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};
-
 //        swap(matrix, 0, 0, 0, 2);
 //        System.out.println(matrix[0][0]);
 //        System.out.println(matrix[0][2]);
@@ -28,7 +27,6 @@ public class RotateImage {
             }
             start++;
         }
-
     }
 
     private static void swap(int[][] matrix, int a, int b, int i, int j) {
