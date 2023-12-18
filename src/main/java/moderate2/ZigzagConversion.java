@@ -21,36 +21,30 @@ public class ZigzagConversion {
         if (numRows < 2) {
             return s;
         }
-        StringBuilder[] stringArrays = new StringBuilder[numRows];
-
-        for(int i = 0; i < stringArrays.length; i++){
-            stringArrays[i] = new StringBuilder();
-        }
-
-        // direction = 1 when going down -> change to -1 when going up
         int direction = 1;
-        int index = 0;
+        int position = 0;
+        StringBuilder[] strings = new StringBuilder[numRows];
+        for (int i = 0; i < numRows; i++) {
+            strings[i] = new StringBuilder();
+        }
 
         for (int i = 0; i < s.length(); i++) {
-            stringArrays[index].append(s.charAt(i));
-
-            // reach the last row -> change direction to going up
-            if (index == numRows - 1) {
-                direction = -1;
-            } else if (index == 0) {
-                // reach the first row -> change direction to going down
+            if (position == 0) {
                 direction = 1;
+            } else if (position == numRows - 1) {
+                direction = -1;
             }
 
-            index += direction;
+            strings[position].append(s.charAt(i));
+            position += direction;
         }
 
-        StringBuilder result = new StringBuilder();
-        for (StringBuilder str : stringArrays) {
-            result.append(str);
+        StringBuilder ans = new StringBuilder();
+        for (StringBuilder string : strings) {
+            ans.append(string);
         }
 
-        return result.toString();
+        return ans.toString();
     }
 }
 
