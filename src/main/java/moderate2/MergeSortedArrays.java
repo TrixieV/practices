@@ -14,42 +14,34 @@ and the last n elements are set to 0 and should be ignored. nums2 has a length o
  */
 public class MergeSortedArrays {
     public static void main(String[] args) {
-        int[] nums2 = new int[]{4,5,6,7,8};
-        int[] nums1 = new int[]{0,0,0,0,0};
-        merge(nums1, 0, nums2, 5);
+        int[] nums1 = new int[]{0,0,0,0,0,0};
+        int[] nums2 = new int[]{4,5,6,7,8,9};
+        merge(nums1, 0, nums2, 6);
         System.out.println(Arrays.toString(nums1));
     }
 
-    private static void merge(int[] nums1, int m, int[] nums2, int n) {
-        if (n == 0) {
-            return;
-        }
-        if (m == 0) {
-            for (int i = 0; i < nums2.length; i++) {
-                nums1[i] = nums2[i];
+    private static void merge2(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
             }
         }
+    }
+    private static void merge(int[] nums1, int m, int[] nums2, int n) {
         int pointer1 = m - 1, pointer2 = n - 1;
         for (int i = nums1.length - 1; i >= 0; i--) {
             if (pointer2 < 0) {
                 break;
             }
-            if (pointer1 < 0) {
-                for (int j = i; j >= 0; j--) {
-                    nums1[j] = nums2[pointer2];
-                    pointer2--;
-                }
-                break;
-            }
-            if (nums1[pointer1] > nums2[pointer2]) {
+            if (pointer1 >= 0 && nums1[pointer1] > nums2[pointer2]) {
                 nums1[i] = nums1[pointer1];
                 pointer1--;
-            } else if (nums1[pointer1] == nums2[pointer2]) {
-                nums1[i] = nums1[pointer1];
-                nums1[i-1] = nums1[pointer1];
-                i--;
-                pointer1--;
-                pointer2--;
             } else {
                 nums1[i] = nums2[pointer2];
                 pointer2--;
