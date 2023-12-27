@@ -14,8 +14,8 @@ The returned string should only have a single space separating the words. Do not
  */
 public class StringReverse {
     public static void main(String[] args) {
-        String s = " Hello   my  name  is    Thao   ";
-        System.out.println(reverseWords2(s));
+        String s = "  Hello   my  name  is    Thao   ";
+        System.out.println(reverseWords(s));
     }
 
     private static String reverseWords2(String s) {
