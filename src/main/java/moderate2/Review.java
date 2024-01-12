@@ -164,28 +164,6 @@ public class Review {
             return true;
         }
         return false;
-
-//        HashMap<Character, Integer> countChar = new HashMap<>();
-//        for (char c : s.toCharArray()) {
-//            if (!countChar.containsKey(c)) {
-//                countChar.put(c, 1);
-//            } else {
-//                countChar.put(c, countChar.get(c) + 1);
-//            }
-//        }
-//
-//        for (char c : t.toCharArray()) {
-//            if (!countChar.containsKey(c)) {
-//                return false;
-//            } else {
-//                if (countChar.get(c) == 0) {
-//                    return false;
-//                }
-//                countChar.put(c, countChar.get(c) - 1);
-//            }
-//        }
-//
-//        return true;
     }
 
     private static List<List<String>> groupAnagrams(String[] strs) {
@@ -203,26 +181,6 @@ public class Review {
 
         return new ArrayList<>(anagramLists.values());
 
-//        List<List<String>> anagramLists = new ArrayList<>();
-//        int[] visited = new int[strs.length];
-//        for (int i = 0; i < strs.length; i++) {
-//            if (visited[i] == 0) {
-//                List<String> list = new ArrayList<>();
-//                list.add(strs[i]);
-//                visited[i] = 1;
-//                for (int j = i + 1; j < strs.length; j++) {
-//                    if (visited[j] == 1) {
-//                        continue;
-//                    }
-//                    if (isAnagram(strs[i], strs[j])) {
-//                        list.add(strs[j]);
-//                        visited[j] = 1;
-//                    }
-//                }
-//                anagramLists.add(list);
-//            }
-//        }
-//        return anagramLists;
     }
 
 
